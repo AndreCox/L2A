@@ -15,3 +15,10 @@ print("Dev dependencies installed.")
 print("Configuring Hooks...")
 os.system("pre-commit install")
 print("Hooks configured.")
+
+print("Setup complete.")
+
+print("Testing Installation...")
+os.system("pytest -v")
+print("Installation tested.")
+print("If there are no errors, everthing installed correctly.")
