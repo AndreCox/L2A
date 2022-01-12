@@ -2,7 +2,7 @@
 
 Monorepo for APSC 258
 
-## Auto Setup
+## Auto Setup 🤖
 
 Install python 3
 `winget install python3 -v 3.9.6150.0`
@@ -19,7 +19,7 @@ Open repository
 Run setup
 `python setup.py`
 
-## Manual Setup
+## Manual Setup ⚙️
 
 Install python 3
 `winget install Python3 -v 3.9.6150.0`
@@ -40,9 +40,9 @@ Install the dev requirements
 Add the hooks to your pre-commit
 `pre-commit install`
 
-If you have just installed you can check if everything is working properly (you need to install dev requirements first)
+## Testing Code 🧪
 `pytest -v`
 
-## Running Code
+## Running Code 🚀
 
 `python3 main.py`
