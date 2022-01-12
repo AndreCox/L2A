@@ -5,7 +5,7 @@ Monorepo for APSC 258
 ## Auto Setup
 
 Install python 3
-`winget install Python3`
+`winget install python3 -v 3.9.6150.0`
 
 Install git
 `winget install git`
@@ -22,7 +22,7 @@ Run setup
 ## Manual Setup
 
 Install python 3
-`winget install Python3`
+`winget install Python3 -v 3.9.6150.0`
 
 Install git
 `winget install git`
