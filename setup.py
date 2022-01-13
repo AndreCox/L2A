@@ -22,3 +22,16 @@ print("Testing Installation...")
 os.system("pytest -v")
 print("Installation tested.")
 print("If there are no errors, everthing installed correctly.")
+
+# ask user to press y or n to continue/exit
+input = input("Would you like to test gpu suport? (y/n): ")
+if input == "y" or input == "Y":
+    print("Testing GPU support...")
+    import tensorflow as tf
+
+    if tf.config.list_physical_devices("GPU"):
+        print("TensorFlow **IS** using the GPU")
+    else:
+        print("TensorFlow **IS NOT** using the GPU")
+else:
+    print("Exiting...")
