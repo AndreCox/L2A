@@ -35,8 +35,10 @@ Open repository
 
 Install dependencies
 `pip install -r requirements.txt`
+
 Install the dev requirements
 `pip install -r requirements-dev.txt`
+
 Add the hooks to your pre-commit
 `pre-commit install`
 
