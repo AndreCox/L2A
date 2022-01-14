@@ -16,6 +16,19 @@ def canny(image):
     return canny
 
 
+def green(image):
+    # define range of green color in HSV
+    lower_green = np.array([40, 40, 40])
+    upper_green = np.array([80, 255, 255])
+    # blur the image
+    blur = cv.GaussianBlur(image, (9, 9), 0)
+    # convert to HSV
+    hsv = cv.cvtColor(blur, cv.COLOR_RGB2HSV)
+    # create a mask
+    mask = cv.inRange(hsv, lower_green, upper_green)
+    return mask
+
+
 # display the video stream
 while True:
     # find all green objects in the video stream and return the coordinates of the bounding boxes
@@ -23,6 +36,8 @@ while True:
     # display the video stream
     cv.imshow("frame", frame)
     cv.imshow("canny", canny(frame))
+    cv.imshow("green", green(frame))
+    cv.imshow("green_canny", cv.bitwise_and(canny(frame), green(frame)))
 
     # quit the program when the user presses 'q'
     if cv.waitKey(1) & 0xFF == ord("q"):
