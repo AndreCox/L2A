@@ -60,6 +60,8 @@ def test():
     # Predict the image
     prediction = model.predict(np.array([image]))
     print("Prediction:", np.argmax(prediction[0]))
+    # print confidence
+    print("Confidence:", np.max(prediction[0]))
     plt.show()
 
 
