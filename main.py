@@ -6,6 +6,7 @@ import cv2 as cv
 cap = cv.VideoCapture(0)
 
 
+
 def canny(image):
     # convert to grayscale
     gray = cv.cvtColor(image, cv.COLOR_RGB2GRAY)
@@ -29,6 +30,17 @@ def green(image):
     return mask
 
 
+# Change thresholds
+params.filterByCircularity = False
+params.filterByConvexity = False
+params.filterByInertia = False
+params.filterByColor = False
+params.filterByArea = True
+params.minArea = 100
+params.maxArea = 1000
+# helloworld
+
+
 # display the video stream
 while True:
     # find all green objects in the video stream and return the coordinates of the bounding boxes
@@ -42,3 +54,4 @@ while True:
     # quit the program when the user presses 'q'
     if cv.waitKey(1) & 0xFF == ord("q"):
         break
+        
