@@ -27,6 +27,14 @@ Open repository
 Run setup
 `python setup.py`
 
+Optionally test for gpu support
+
+## GPU Support 🖥️
+
+You may have an issue relating to CUDA if you checked for GPU support in the last step.
+To fix this you have to install the [CUDA Toolkit](https://developer.nvidia.com/cuda-downloads?target_os=windows&target_arch=x86_64&target_version=11&target_type=exe_network)
+and install [CUDADNN](https://developer.nvidia.com/rdp/cudnn-download)
+
 ## Manual Setup ⚙️
 
 Install python 3
