@@ -11,7 +11,10 @@ const TryConnect = () => {
   socket = io(`http://${store.ip}:3000`);
   socket.on('connect', function () {
     console.log('connected');
-    socket.emit('steer', 0);
+    store.connected = true;
+  });
+  socket.on('disconnect', function () {
+    store.connected = false;
   });
 };
 
@@ -23,6 +26,30 @@ const interval = setInterval(() => {
   }
 }, 1000);
 
+var powerDown = false;
+var steeringDown = false;
+const ElasticControls = setInterval(() => {
+  //if power is not 0 pull it back to 0
+  if (powerDown === false) {
+    if (store.power > 0) {
+      store.power--;
+    } else if (store.power < 0) {
+      store.power++;
+    } else {
+      powerDown = false;
+    }
+  }
+  if (steeringDown === false) {
+    if (store.angle > 90) {
+      store.angle--;
+    } else if (store.angle < 90) {
+      store.angle++;
+    } else {
+      steeringDown = false;
+    }
+  }
+}, 10);
+
 const Home = observer(() => {
   // Return the App component.
   return (
@@ -32,6 +59,9 @@ const Home = observer(() => {
         placeholder="ip"
         type="text"
         value={store.ip}
+        onClick={() => {
+          console.log('clicked');
+        }}
         onChange={(e) => {
           store.ip = e.target.value;
           if (isIP(store.ip)) {
@@ -48,6 +78,18 @@ const Home = observer(() => {
             min="0"
             max="180"
             value={store.angle}
+            onMouseDown={() => {
+              steeringDown = true;
+            }}
+            onMouseUp={() => {
+              steeringDown = false;
+            }}
+            onTouchStart={() => {
+              steeringDown = true;
+            }}
+            onTouchEnd={() => {
+              steeringDown = false;
+            }}
             onChange={(e) => {
               store.angle = Number(e.target.value);
               socket.emit('steer', store.angle);
@@ -68,6 +110,18 @@ const Home = observer(() => {
             min="-100"
             max="100"
             value={store.power}
+            onMouseDown={() => {
+              powerDown = true;
+            }}
+            onMouseUp={() => {
+              powerDown = false;
+            }}
+            onTouchStart={() => {
+              powerDown = true;
+            }}
+            onTouchEnd={() => {
+              powerDown = false;
+            }}
             onChange={(e) => {
               store.power = Number(e.target.value);
               socket.emit('drive', store.power);
