@@ -38,6 +38,9 @@ const ElasticControls = setInterval(() => {
     } else {
       powerDown = false;
     }
+    if (store.connected) {
+      socket.emit('drive', store.power);
+    }
   }
   if (steeringDown === false) {
     if (store.angle > 90) {
@@ -46,6 +49,10 @@ const ElasticControls = setInterval(() => {
       store.angle++;
     } else {
       steeringDown = false;
+    }
+    console.log(store.angle);
+    if (store.connected) {
+      socket.emit('steer', store.angle);
     }
   }
 }, 10);
