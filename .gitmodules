@@ -1,0 +1,3 @@
+[submodule "Rocket-Template"]
+	path = Rocket-Template
+	url = https://github.com/AndreCox/Rocket-Template.git
