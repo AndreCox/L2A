@@ -1,0 +1,6 @@
+{
+	"appId": "com.rockettemplate.app",
+	"appName": "Rocket Template",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}

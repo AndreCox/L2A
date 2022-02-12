@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Rocket Template</string>
+    <string name="title_activity_main">Rocket Template</string>
+    <string name="package_name">com.rockettemplate.app</string>
+    <string name="custom_url_scheme">com.rockettemplate.app</string>
+</resources>
