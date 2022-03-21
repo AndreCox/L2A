@@ -1,0 +1,6 @@
+{
+	"appId": "com.rockettemplate.app",
+	"appName": "PiCar Remote",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}

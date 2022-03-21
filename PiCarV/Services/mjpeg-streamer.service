@@ -1,0 +1,13 @@
+[Unit]
+Description=Streams video with Raspberry Pi Camera
+After=syslog.target
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/pi/run-mjpg-streamer.sh
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

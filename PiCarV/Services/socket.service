@@ -1,0 +1,10 @@
+[Unit]
+Description = Socket server for control
+After = network.target
+
+[Service]
+ExecStart = /home/pi/start-socket-server.sh
+Restart = on-failure
+
+[Install]
+WantedBy = multi-user.target

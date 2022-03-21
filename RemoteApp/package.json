@@ -1,0 +1,71 @@
+{
+  "name": "rocket-template",
+  "version": "0.0.1",
+  "author": "Andre Cox",
+  "homepage": "https://github.com/AndreCox/Rocket-Template",
+  "scripts": {
+    "start": "snowpack dev",
+    "build": "snowpack build",
+    "android": "npm run build && cap run android",
+    "ios": "npm run build && cap run ios",
+    "test": "web-test-runner \"src/**/*.test.tsx\"",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
+    "lint": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\""
+  },
+  "dependencies": {
+    "@capacitor/core": "^3.4.0",
+    "@capacitor/status-bar": "^1.0.8",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/material": "^5.4.2",
+    "gamepads": "^1.2.2",
+    "mobx": "^6.3.13",
+    "mobx-react-lite": "^3.2.3",
+    "react": "^17.0.2",
+    "react-cookie": "^4.1.1",
+    "react-dom": "^17.0.2",
+    "react-gamepads": "^1.0.0",
+    "react-icons": "^4.3.1",
+    "react-router-dom": "^6.2.1",
+    "socket.io-client": "^4.4.1",
+    "universal-cookie": "^4.0.4",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^3.4.0",
+    "@capacitor/cli": "^3.4.0",
+    "@capacitor/ios": "^3.4.0",
+    "@snowpack/plugin-dotenv": "^2.1.0",
+    "@snowpack/plugin-postcss": "^1.4.3",
+    "@snowpack/plugin-react-refresh": "^2.5.0",
+    "@snowpack/plugin-sass": "^1.4.0",
+    "@snowpack/plugin-typescript": "^1.2.1",
+    "@snowpack/plugin-webpack": "^3.0.0",
+    "@snowpack/web-test-runner-plugin": "^0.2.2",
+    "@testing-library/react": "^11.2.6",
+    "@types/chai": "^4.2.17",
+    "@types/mocha": "^8.2.2",
+    "@types/react": "^17.0.4",
+    "@types/react-dom": "^17.0.3",
+    "@types/snowpack-env": "^2.3.3",
+    "@types/validator": "^13.7.1",
+    "@web/test-runner": "^0.13.3",
+    "chai": "^4.3.4",
+    "prettier": "^2.2.1",
+    "snowpack": "^3.3.7",
+    "tailwindcss": "^3.0.19",
+    "typescript": "^4.2.4"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+[Unit]
+Description = Client for controlling low level features through socket server
+After = network.target socket.service
+
+[Service]
+ExecStart = /home/pi/start-driver.sh
+Restart = on-failure
+
+[Install]
+WantedBy = multi-user.target
