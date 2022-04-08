@@ -10,7 +10,7 @@ import imutils
 
 
 
-ip = "192.168.1.139"
+ip = "192.168.1.59"
 
 
 # Load the model
@@ -28,6 +28,9 @@ sio.emit("tilt", car_tilt)
 
 car_speed = 0
 sio.emit("drive", car_speed)
+
+car_pan = 90
+sio.emit("pan", car_pan)
 
 h_lower = 40
 s_lower = 20
@@ -59,6 +62,7 @@ cv.createTrackbar("Contour Area", "Adjustments", 0, 10000, null)
 
 cv.createTrackbar("Car Speed", "Adjustments", 0, 100, null)
 cv.createTrackbar("Car Tilt", "Adjustments", 45, 90, null)
+cv.createTrackbar("Car Pan", "Adjustments", 90, 180, null)
 
 while True:
     try:
@@ -69,6 +73,10 @@ while True:
         if (car_tilt != cv.getTrackbarPos("Car Tilt", "Adjustments")):
             car_tilt = cv.getTrackbarPos("Car Tilt", "Adjustments")
             sio.emit("tilt", car_tilt)
+
+        if (car_pan != cv.getTrackbarPos("Car Pan", "Adjustments")):
+            car_pan = cv.getTrackbarPos("Car Pan", "Adjustments")
+            sio.emit("pan", car_pan)
 
         h_lower = cv.getTrackbarPos("h_lower", "Adjustments")
         s_lower = cv.getTrackbarPos("s_lower", "Adjustments")

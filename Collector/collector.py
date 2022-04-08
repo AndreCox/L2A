@@ -6,7 +6,7 @@ import socketio
 import csv
 from os import path
 
-ip = "192.168.1.139"
+ip = "192.168.1.59"
 
 if path.exists("frames/data.csv"):
     csvfile = "frames/data.csv"
